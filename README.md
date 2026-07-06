@@ -8,6 +8,10 @@ then surfaces all of it in an interactive dashboard.
 Works with **either OpenAI or Google Gemini** behind a single config toggle,
 so switching providers (or comparing them) takes one line, not a rewrite.
 
+## 🔗 Live App
+
+[**Try it here →**](https://smart-inbox-assistant-ucbrzzfqpbc4afpwihy2os.streamlit.app)
+
 ---
 
 ## What it does
@@ -132,6 +136,28 @@ faked.
 
 ---
 
+## 🛡️ Resilience by Design
+
+This app never shows a broken UI, even when live API credits run out. Every
+call to OpenAI or Gemini is wrapped with explicit error handling: if a
+request fails for any reason — expired quota, an invalid key, a network
+blip — the pipeline automatically falls back to a deterministic local
+classifier instead of crashing or hanging.
+
+Nothing is ever silently faked. Each processed email carries a
+`processing_mode` field (visible in the dashboard under "Processed via")
+that states plainly whether it was classified by `openai`, `gemini`, or the
+local `mock` fallback — including the specific upstream error when a fallback
+occurs. That transparency was a deliberate build choice: a support-triage
+tool that goes down when a vendor API hiccups is worse than one that degrades
+gracefully and says so.
+
+If the Live App above is currently showing `mock` mode, it means the
+connected API key has hit a usage limit — the architecture, dashboard, and
+full pipeline are still running exactly as designed.
+
+---
+
 ## Skills Demonstrated
 
 - **Python** — modular application design (config/client/pipeline/UI
@@ -150,6 +176,9 @@ faked.
   parsed and validated before use downstream
 - **Prompt engineering** — one schema-constrained system prompt shared
   across two different LLM providers
+- **Provider-agnostic architecture** — a single config toggle (`LLM_PROVIDER`)
+  swaps the entire app between OpenAI and Gemini with zero changes to
+  pipeline or UI code
 
 ---
 
