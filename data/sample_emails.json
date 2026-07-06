@@ -1,0 +1,86 @@
+[
+  {
+    "email_id": "EM-1001",
+    "from_name": "Jordan Malik",
+    "from_email": "jordan.malik@example.com",
+    "subject": "Package never arrived - very frustrated",
+    "body": "I ordered a laptop stand two weeks ago (order #A88291) and it still hasn't shown up. Your tracking page has said 'in transit' for 9 days straight. This is the second time this has happened with your company and I'm honestly considering just requesting a refund and shopping elsewhere. Can someone actually look into this today?"
+  },
+  {
+    "email_id": "EM-1002",
+    "from_name": "Priya Chandrasekaran",
+    "from_email": "priya.c@example.com",
+    "subject": "Question about return policy",
+    "body": "Hi there, I'm thinking about buying the ceramic knife set but I want to double check your return window first. Is it 30 days from delivery or from purchase date? Also, do you cover return shipping for defective items? Thanks in advance!"
+  },
+  {
+    "email_id": "EM-1003",
+    "from_name": "Marcus Webb",
+    "from_email": "m.webb@example.com",
+    "subject": "Where is my order #C10432",
+    "body": "Hey, just checking on the status of order #C10432. It said it would arrive by Tuesday but I haven't gotten any shipping confirmation yet. No rush, just want to make sure everything's on track since it's a birthday gift."
+  },
+  {
+    "email_id": "EM-1004",
+    "from_name": "unknown",
+    "from_email": "promo-deals99@freemail-offers.biz",
+    "subject": "YOU HAVE WON $5,000,000!!! CLAIM NOW",
+    "body": "CONGRATULATIONS!!! You have been selected to receive a prize of $5,000,000 USD. To claim your winnings click the link below and provide your bank account details within 24 hours or the offer expires. Act now!!!"
+  },
+  {
+    "email_id": "EM-1005",
+    "from_name": "Angela Torres",
+    "from_email": "angela.torres@example.com",
+    "subject": "Damaged item received - need urgent replacement",
+    "body": "I just opened the box for the glass dining table top I ordered (order #A77120) and it arrived completely shattered on one corner. I have a dinner event this weekend and really need a replacement or refund processed as soon as possible. Photos attached. Please advise urgently."
+  },
+  {
+    "email_id": "EM-1006",
+    "from_name": "David Kim",
+    "from_email": "d.kim@example.com",
+    "subject": "Do you ship to Canada?",
+    "body": "Quick question before I place a large order - do you currently ship to Canada, and if so what are the typical customs fees customers have reported? Would love to know before checkout."
+  },
+  {
+    "email_id": "EM-1007",
+    "from_name": "Rachel Nguyen",
+    "from_email": "rachel.n@example.com",
+    "subject": "Wrong item sent - order #B55210",
+    "body": "I ordered the medium size in navy blue but received a large in grey instead. This is pretty disappointing since I needed this for an event next week. Can you send the correct item out with expedited shipping and provide a label to send the wrong one back?"
+  },
+  {
+    "email_id": "EM-1008",
+    "from_name": "Tom Reyes",
+    "from_email": "tom.reyes@example.com",
+    "subject": "Loving the new blender!",
+    "body": "Just wanted to say the blender I bought last month has been amazing, way better than my old one. Out of curiosity, do you sell replacement blades separately in case mine ever wear out?"
+  },
+  {
+    "email_id": "EM-1009",
+    "from_name": "SecureBank Alerts",
+    "from_email": "alerts@secure-bank-verify.net",
+    "subject": "Your account has been suspended - verify now",
+    "body": "Dear customer, unusual activity has been detected on your linked payment account. Your account access has been suspended. Click here immediately to verify your identity and restore access or your funds will be frozen permanently."
+  },
+  {
+    "email_id": "EM-1010",
+    "from_name": "Emily Foster",
+    "from_email": "emily.foster@example.com",
+    "subject": "Charged twice for one order",
+    "body": "I just checked my bank statement and I was charged $89.99 twice for order #A91345, which I only placed once. This is unacceptable and I need this resolved and refunded immediately. I've never had a billing issue like this before and I'm quite upset."
+  },
+  {
+    "email_id": "EM-1011",
+    "from_name": "Hassan Ali",
+    "from_email": "hassan.ali@example.com",
+    "subject": "Order status - #C10501",
+    "body": "Hello, just wondering if order #C10501 has shipped yet. The estimated delivery window on the confirmation email has already passed. Let me know when you get a chance, thanks."
+  },
+  {
+    "email_id": "EM-1012",
+    "from_name": "Sophie Turner",
+    "from_email": "sophie.turner@example.com",
+    "subject": "Sizing chart question",
+    "body": "Hi! I'm between two sizes based on your chart for the winter jacket. Could someone tell me if it runs true to size or slightly large? Really don't want to deal with a return if I can help it."
+  }
+]
