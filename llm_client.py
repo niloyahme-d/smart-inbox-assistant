@@ -182,6 +182,35 @@ def _mock_response(email: dict) -> dict:
 # Public entry point
 # ---------------------------------------------------------------------------
 
+def _validate_api_key(key: str, provider_name: str) -> str:
+    """Catch corrupted secrets (smart-quote/dash autocorrect, stray
+    whitespace, copy-paste artifacts) before they hit the HTTP layer as an
+    opaque UnicodeEncodeError. Fails loudly with a specific, actionable
+    message instead of silently degrading to mock mode."""
+    cleaned = key.strip()
+
+    try:
+        cleaned.encode("ascii")
+    except UnicodeEncodeError as exc:
+        bad_char = exc.object[exc.start:exc.end]
+        raise LLMError(
+            f"{provider_name} API key contains a non-ASCII character "
+            f"({bad_char!r} at position {exc.start}). This almost always "
+            f"means a straight hyphen/quote was autocorrected into a "
+            f"'smart' character during copy-paste (e.g. via Word, Notes, "
+            f"or Google Docs). Fix: regenerate the key and paste it "
+            f"directly from a plain-text source into Streamlit Secrets."
+        )
+
+    if cleaned != key:
+        raise LLMError(
+            f"{provider_name} API key has leading/trailing whitespace or "
+            f"a hidden character. Re-paste it without extra spaces/newlines."
+        )
+
+    return cleaned
+
+
 def get_structured_response(email: dict) -> dict:
     """Classify + extract + draft a reply for a single email dict.
 
@@ -199,10 +228,11 @@ def get_structured_response(email: dict) -> dict:
         return result
 
     try:
+        validated_key = _validate_api_key(provider.api_key, provider.name)
         if provider.name == "openai":
-            raw = _call_openai(SYSTEM_PROMPT, user_prompt, provider.model, provider.api_key)
+            raw = _call_openai(SYSTEM_PROMPT, user_prompt, provider.model, validated_key)
         elif provider.name == "gemini":
-            raw = _call_gemini(SYSTEM_PROMPT, user_prompt, provider.model, provider.api_key)
+            raw = _call_gemini(SYSTEM_PROMPT, user_prompt, provider.model, validated_key)
         else:
             raise LLMError(f"Unsupported provider: {provider.name}")
 
